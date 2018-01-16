@@ -1,0 +1,41 @@
+<div>
+  <img src="<%= food.image %>" alt="<%= food.name %>">
+  <h2><%= food.name %></h2>
+  <h3>Created By: <%= food.createdBy.username %></h3>
+  <p>
+    <%= food.protein %><br>
+    <%= food.carbs %><br>
+    <%= food.fat %><br>
+    <%= food.calories%>
+  </p>
+
+  <% if(locals.isLoggedIn && food.belongsTo(user)) { %>
+    <a href="/foods/<%= food.id %>/edit">Edit</a>
+    <form method="POST" action="/foods/<%= food.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete</button>
+    </form>
+  <% } %>
+
+  <% food.comments.forEach((comment) => { %>
+    <p><%= comment.content %></p>
+    <small><%= comment.createdBy.username %></small>
+
+    <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+      <form method="POST" action="/foods/<%= food.id %>/comments/<%= comment.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete</button>
+      </form>
+    <% } %>
+  <% }) %>
+
+  <% if(locals.isLoggedIn) { %>
+  <section>
+    <h4>Leave a comment</h4>
+    <form method="POST" action="/foods/<%= food.id %>/comments">
+      <textarea name="content" id="content" placeholder="Comment"></textarea>
+      <button class="button">Leave a comment</button>
+    </form>
+  </section>
+<% } %>
+</div>

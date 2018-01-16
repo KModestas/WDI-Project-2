@@ -1,0 +1,14 @@
+<% foods.forEach((food) => { %>
+  <div>
+    <a href="/foods/<%= food.id %>">
+      <img src="<%= food.image %>" alt="<%= food.name %>">
+      <h2><%= food.name %></h2>
+      <p>
+        <%= food.protein %><br>
+        <%= food.carbs %><br>
+        <%= food.fat %><br>
+        <%= food.calories %>
+      </p>
+    </a>
+  </div>
+<% }) %>

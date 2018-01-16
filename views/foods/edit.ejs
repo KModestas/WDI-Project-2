@@ -1,0 +1,30 @@
+<form method="POST" action="/foods/<%= food.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" value="<%= food.name %>" required>
+  </div>
+
+    <div>
+      <label for="image">Image</label>
+      <input type="text" name="image" id="image" value="<%= food.image %>" required>
+    </div>
+    <div>
+      <label for="protein">Protein (per 100g)</label>
+      <input type="number" name="protein" id="protein" value="<%= food.protein %>">
+    </div>
+    <div>
+      <label for="carbs">Carbs (per 100g)</label>
+      <input type="number" name="carbs" id="carbs" value="<%= food.carbs %>" required>
+    </div>
+    <div>
+      <label for="fat">Fat (per 100g)</label>
+      <input type="number" name="fat" id="fat" value="<%= food.fat %>" required>
+    </div>
+    <div>
+      <label for="calories">Calories (per 100g)</label>
+      <input type="number" name="calories" id="calories" value="<%= food.calories %>" required>
+    </div>
+
+  <button class="button">Update Food</button>
+</form>
