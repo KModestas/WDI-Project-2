@@ -4,7 +4,7 @@ const { dbURI } = require('../config/environment');
 mongoose.Promise = require('bluebird');
 mongoose.connect(dbURI);
 
-const Food = require('../models/hotel');
+const Food = require('../models/food');
 const User = require('../models/user');
 
 Food.collection.drop();
@@ -26,14 +26,16 @@ User
         protein: 5,
         carbs: 20,
         fat: 10,
-        calories: 250
+        calories: 250,
+        createdBy: users[0]
       },{
         name: 'Chicken',
         image: 'http://subversify.com/wp-content/uploads/2017/04/chicken-011.jpg',
         protein: 10,
         carbs: 15,
         fat: 8,
-        calories: 120
+        calories: 120,
+        createdBy: users[0]
       }]);
   })
   .then((hotels) => console.log(`${hotels.length} hotels created`))
