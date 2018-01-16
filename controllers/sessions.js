@@ -20,13 +20,13 @@ function sessionsCreate(req, res, next) {
       req.user = user;
 
       req.flash('success', `Welcome back, ${user.username}!`);
-      res.redirect('/');
+      res.redirect('/foods');
     })
     .catch(next);
 }
 
 function sessionsDelete(req, res) {
-  req.session.regenerate(() => res.redirect('/'));
+  req.session.regenerate(() => res.redirect('/foods'));
 }
 
 module.exports = {
