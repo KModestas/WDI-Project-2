@@ -14,7 +14,7 @@ function newRoute(req, res) {
 }
 
 function createRoute(req, res, next) {
-  // create a new propertycalled createdby and make it equal to the logged in user
+  // create a new property called createdby and make it equal to the logged in user
   req.body.createdBy = req.user;
 
   Food
@@ -45,8 +45,9 @@ function editRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((food) => {
-      if(!food) return res.notFound();
-      return res.render('foods/edit', { food });
+      if(!food) return res.redirect();
+      if(!food.belongsTo(req.user)) return res.unauthorized(`/food/${food.id}`, 'You do not have permission to edit that resource');
+      return res.render('food/edit', { food });
     })
     .catch(next);
 }

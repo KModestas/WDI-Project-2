@@ -29,6 +29,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// needs to come AFTER sessions
 app.use(flash());
 
 app.use(customResponses);

@@ -25,6 +25,7 @@ function sessionsCreate(req, res, next) {
     .catch(next);
 }
 
+// deletes session when log out
 function sessionsDelete(req, res) {
   req.session.regenerate(() => res.redirect('/foods'));
 }

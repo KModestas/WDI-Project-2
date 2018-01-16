@@ -2,6 +2,7 @@ const router = require('express').Router();
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const foods = require('../controllers/foods');
+// secureRoute can be passed as an argument first to only allow user access to page if logged in
 const secureRoute = require('../lib/secureRoute');
 
 // landing page
@@ -39,7 +40,7 @@ router.route('/foods/:id/edit')
 router.route('/foods/:id/comments')
   .post(foods.createComment);
 
-// dlete individual comment of individual food
+// delete individual comment of individual food
 router.route('/foods/:id/comments/:commentId')
   .delete(foods.deleteComment);
 

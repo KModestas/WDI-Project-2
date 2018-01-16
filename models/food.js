@@ -29,6 +29,7 @@ foodSchema.methods.belongsTo = function belongsTo(user) {
 // check if the user who created the food is the same as the person who is logged in
 // 'this' is the instance of the food that we are calling the belongs to method on
 // 'user is the user object that we wll pass this method (the user who is logged in)'
+  if(typeof this.createdBy.id === 'string') return this.createdBy.id === user.id;
   return this.createdBy.id === user.id;
 };
 
