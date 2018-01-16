@@ -19,6 +19,7 @@ const foodSchema = new mongoose.Schema({
   carbs: { type: Number, required: true },
   fat: { type: Number, required: true },
   calories: { type: Number, required: true },
+  description: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
   // 'User' had to match watch the module.exports first argument is in the user model'
   comments: [ commentSchema ]

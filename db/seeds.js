@@ -27,6 +27,7 @@ User
         carbs: 20,
         fat: 10,
         calories: 250,
+        description: 'You can get these at the local supermarket, really good source of protein and vitamins',
         createdBy: users[0]
       },{
         name: 'Chicken',
@@ -35,9 +36,10 @@ User
         carbs: 15,
         fat: 8,
         calories: 120,
+        description: 'Who doesnt like chciken just stay away from those literally shitty battery chickens that will steal your gains',
         createdBy: users[0]
       }]);
   })
-  .then((hotels) => console.log(`${hotels.length} hotels created`))
+  .then((foods) => console.log(`${foods.length} foods created`))
   .catch((err) => console.log(err))
   .finally(() => mongoose.connection.close());
