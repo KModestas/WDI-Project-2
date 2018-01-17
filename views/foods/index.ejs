@@ -1,14 +1,15 @@
 <%- include ../partials/_navbar.ejs %>
 
-<% foods.forEach((food) => { %>
-<div class="container col-md-12 col-sm-6 col-lg-4">
+<div class="container">
       <div class="row">
-       <div>
+<% foods.forEach((food) => { %>
+
+    <div class="col-4">
     <a href="/foods/<%= food.id %>">
       <h2><%= food.name %></h2>
     </a>
 
-   <img src="<%= food.image %>" alt="<%= food.name %>">
+   <img class="img-fluid img-thumbnail" src="<%= food.image %>" alt="<%= food.name %>">
    <p>
      Amounts per 100g: <br>
      Protein: <%= food.protein %>g<br>
@@ -18,9 +19,9 @@
      Description: <br><%= food.description %><br>
    </p>
    </div>
-   </div>
-</div>
 <% }) %>
+</div>
+</div>
 
 
 <%# <div class="card" style="width: 20rem;">
