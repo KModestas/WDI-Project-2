@@ -1,3 +1,6 @@
+
+<%- include ../partials/_navbar.ejs %>
+
 <form method="POST" action="/foods/<%= food.id %>">
   <input type="hidden" name="_method" value="PUT">
   <div>
@@ -27,7 +30,8 @@
     <div>
       <div>
         <label for="description">Description</label>
-        <input type="number" name="description" id="description" value="<%= food.description %>" required>
+        <textarea name="description" id="description" value="<%= food.description %>" required>
+       </textarea>
       </div>
 
   <button class="button">Update Food</button>

@@ -1,13 +1,17 @@
+<%- include ../partials/_navbar.ejs %>
+
 <div>
-  <img src="<%= food.image %>" alt="<%= food.name %>">
   <h2><%= food.name %></h2>
   <h3>Created By: <%= food.createdBy.username %></h3>
+  <img src="<%= food.image %>" alt="<%= food.name %>">
+
   <p>
-    <%= food.protein %><br>
-    <%= food.carbs %><br>
-    <%= food.fat %><br>
-    <%= food.calories %><br>
-    <%= food.description %><br>
+    Amounts per 100g:<br>
+    Protein: <%= food.protein %>g<br>
+    Carbs: <%= food.carbs %>g<br>
+    Fat: <%= food.fat %>g<br>
+    Calories: <%= food.calories %><br>
+    Description: <br><%= food.description %><br>
   </p>
 
   <% if(locals.isLoggedIn && food.belongsTo(user)) { %>

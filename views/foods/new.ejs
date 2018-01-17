@@ -1,3 +1,5 @@
+<%- include ../partials/_navbar.ejs %>
+
 <form method="POST" action="/foods">
   <div>
     <label for="name">Name</label>
@@ -26,7 +28,8 @@
     <div>
     <div>
       <label for="description">Description</label>
-      <input type="number" name="description" id="description" required>
+      <textarea name="description" id="description" value="<%= food.description %>" required>
+     </textarea>
     </div>
 
   <button class="button">Add Food</button>

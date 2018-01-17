@@ -34,7 +34,7 @@ router.route('/foods/:id')
 
 // edit form for individual food
 router.route('/foods/:id/edit')
-  .get(secureRoute, foods.edit);
+  .get( foods.edit);
 
 // create comment for individual food
 router.route('/foods/:id/comments')

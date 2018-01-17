@@ -43,11 +43,14 @@ function showRoute(req, res, next) {
 function editRoute(req, res, next) {
   Food
     .findById(req.params.id)
+    .populate('createdBy')
     .exec()
     .then((food) => {
+      console.log(food);
+      console.log(food.belongsTo(req.user));
       if(!food) return res.redirect();
-      if(!food.belongsTo(req.user)) return res.unauthorized(`/food/${food.id}`, 'You do not have permission to edit that resource');
-      return res.render('food/edit', { food });
+      if(!food.belongsTo(req.user)) return res.unauthorized(`/foods/${food.id}`, 'You do not have permission to edit that resource');
+      return res.render('foods/edit', { food });
     })
     .catch(next);
 }
