@@ -1,11 +1,13 @@
+<main class-"background-image">
 
 <%- include ../partials/_navbar.ejs %>
+
 
 <form method="POST" action="/foods/<%= food.id %>">
   <input type="hidden" name="_method" value="PUT">
   <div>
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="<%= food.name %>" required>
+    <input type="text" name="name" id="name" value="<%= food.name %>" maxlength="25" required>
   </div>
 
     <div>
@@ -36,3 +38,4 @@
 
   <button class="button">Update Food</button>
 </form>
+</main>

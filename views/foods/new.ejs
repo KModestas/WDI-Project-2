@@ -1,9 +1,11 @@
+<main class="background-image">
+
 <%- include ../partials/_navbar.ejs %>
 
-<form method="POST" action="/foods">
+<form method="POST" action="/foods" class="col-md-6 offset-md-3">
   <div>
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" class="form-control" required>
+    <input type="text" name="name" id="name" class="form-control" maxlength="25" required>
   </div>
 
     <div>
@@ -34,3 +36,5 @@
 
   <button class="button btn btn-primary">Add Food</button>
 </form>
+
+</main>

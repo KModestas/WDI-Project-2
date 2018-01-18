@@ -1,43 +1,23 @@
 <%- include ../partials/_navbar.ejs %>
 
-<div class="container-fluid card">
+<div class="container">
       <div class="row">
 <% foods.forEach((food) => { %>
 
-    <div class="card-block col-4">
+    <div class="food-block col-lg-4 col-sm-12 col-xs-12">
     <a href="/foods/<%= food.id %>">
-      <h2 class="card-title"><%= food.name %></h2>
+      <h2><%= food.name %></h2>
     </a>
 
-   <img class="img-thumbnail" src="<%= food.image %>" alt="<%= food.name %>">
+   <img class="food-image" src="<%= food.image %>" alt="<%= food.name %>">
    <p>
-     Amounts per 100g: <br>
+     (Amounts per 100g) <br>
      Protein: <%= food.protein %>g<br>
      Carbs: <%= food.carbs %>g<br>
      Fat: <%= food.fat %>g<br>
      Calories: <%= food.calories %><br>
-     Description: <br><%= food.description %><br>
-   </p>
+    </p>
    </div>
 <% }) %>
 </div>
 </div>
-
-<%# <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>%>
-
-
-<%# <div class="card" style="width: 20rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>%>
