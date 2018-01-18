@@ -3,34 +3,34 @@
 <form method="POST" action="/foods">
   <div>
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" required>
+    <input type="text" name="name" id="name" class="form-control" required>
   </div>
 
     <div>
       <label for="image">Image</label>
-      <input type="text" name="image" id="image" required>
+      <input type="text" name="image" id="image" class="form-control" required>
     </div>
     <div>
       <label for="protein">Protein (per 100g)</label>
-      <input type="number" name="protein" id="protein" required>
+      <input type="number" name="protein" id="protein" class="form-control" required>
     </div>
     <div>
       <label for="carbs">Carbs (per 100g)</label>
-      <input type="number" name="carbs" id="carbs" required>
+      <input type="number" name="carbs" id="carbs" class="form-control" required>
     </div>
     <div>
       <label for="fat">Fat (per 100g)</label>
-      <input type="number" name="fat" id="fat" required>
+      <input type="number" name="fat" id="fat" class="form-control" required>
     </div>
     <div>
       <label for="calories">Calories (per 100g)</label>
-      <input type="number" name="calories" id="calories" required>
+      <input type="number" name="calories" id="calories" class="form-control" required>
     <div>
     <div>
       <label for="description">Description</label>
-      <textarea name="description" id="description" value="<%= food.description %>" required>
+      <textarea name="description" id="description" class="form-control" required>
      </textarea>
     </div>
 
-  <button class="button">Add Food</button>
+  <button class="button btn btn-primary">Add Food</button>
 </form>

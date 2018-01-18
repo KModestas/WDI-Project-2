@@ -11,9 +11,6 @@ router.get('/', (req, res) => res.render('statics/index'));
 // About Page
 router.get('/about', (req, res) => res.render('statics/about'));
 
-// Contact page
-router.get('/contact', (req, res) => res.render('statics/contact'));
-
 // profile page
 router.get('/profile', (req, res) => res.render('statics/profile'));
 
