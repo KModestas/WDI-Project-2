@@ -4,6 +4,7 @@
 @import 'partials/login';
 @import 'partials/about';
 @import 'partials/register';
+@import 'partials/food';
 
 
 
@@ -61,4 +62,15 @@ color: #ffffff;
 
 btn {
   margin-top: 20px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+.add-food-form {
+  margin: 20px;
+  button {
+    margin-top: 15px;
+  }
 }

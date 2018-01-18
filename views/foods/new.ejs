@@ -2,7 +2,8 @@
 
 <%- include ../partials/_navbar.ejs %>
 
-<form method="POST" action="/foods" class="col-md-6 offset-md-3">
+  <h1> Add a Food </h1>
+<form class="add-food-form" method="POST" action="/foods" class="col-md-6 offset-md-3">
   <div>
     <label for="name">Name</label>
     <input type="text" name="name" id="name" class="form-control" maxlength="25" required>

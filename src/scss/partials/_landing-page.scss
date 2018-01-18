@@ -1,10 +1,29 @@
-
+// pushes the content down without moving image
 .heading-container {
-  padding-top:50px;
+  color: #ffffff;
+  padding-top:200px;
+  h1 {
+    background: rgba(0,0,0,0.7);
+    height: 120px;
+    padding-top: 20px;
+    font-size: 70px;
+  }
+  h2 {
+    background: rgba(0,0,0,0.7);
+    margin-top: 40px;
+    height: 85px;
+    padding-top: 18px;
+  }
 }
 
-.landing-page-headings {
-  background: #000000;
-  opacity: 0.4;
-  color: #ffffff;
+
+
+.landing-page-buttons {
+  width: 200px;
+  margin: 50px auto;
+  a {
+    margin-right: 40px;
+    font-size: 1.25rem;
+
+  }
 }
