@@ -2,6 +2,8 @@ const router = require('express').Router();
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const foods = require('../controllers/foods');
+const users = require('../controllers/users');
+
 // secureRoute can be passed as an argument first to only allow user access to page if logged in
 const secureRoute = require('../lib/secureRoute');
 
@@ -11,8 +13,9 @@ router.get('/', (req, res) => res.render('statics/index'));
 // About Page
 router.get('/about', (req, res) => res.render('statics/about'));
 
-// profile page
-router.get('/profile', (req, res) => res.render('statics/profile'));
+// favourites page
+router.route('/favourites')
+  .get(users.favourites);
 
 // index of all foods
 router.route('/foods')

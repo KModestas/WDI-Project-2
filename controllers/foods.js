@@ -142,10 +142,13 @@ function addFavouriteRoute(req, res, next) {
           return user.save();
         })
         .then(() => {
-          res.redirect('/profile');
+          res.redirect('/favourites');
         });
     })
     .catch(next);
+
+    // populate the food so that you have access to the full Object
+    // loop over favourites in favourites.ejs and display them
 
 }
 

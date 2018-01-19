@@ -1,0 +1,25 @@
+<%- include ../partials/_navbar.ejs %>
+<h3 class="favourites-heading">Your Favourites</h3>
+
+
+<div class="container">
+      <div class="row">
+<% foods.forEach((food) => { %>
+
+    <div class="food-block col-lg-4 col-sm-12 col-xs-12">
+    <a href="/foods/<%= food.id %>">
+      <h2><%= food.name %></h2>
+    </a>
+
+   <img class="food-image" src="<%= food.image %>" alt="<%= food.name %>">
+   <p>
+     (Amounts per 100g) <br>
+     Protein: <%= food.protein %>g<br>
+     Carbs: <%= food.carbs %>g<br>
+     Fat: <%= food.fat %>g<br>
+     Calories: <%= food.calories %><br>
+    </p>
+   </div>
+<% }) %>
+</div>
+</div>
