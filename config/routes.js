@@ -55,6 +55,10 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
+// favourites
+router.route('/foods/:id/favourite')
+  .post(foods.favourite);
+
 router.all('*', (req, res) => res.notFound());
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const Food = require('../models/food');
+const User = require('../models/user');
 
 
 function indexRoute(req, res, next) {
@@ -127,6 +128,27 @@ function deleteCommentRoute(req, res, next) {
 }
 
 
+function addFavouriteRoute(req, res, next) {
+  Food
+    .findById(req.params.id)
+    .exec()
+    .then((food) => {
+      return User
+        .findById(req.user.id)
+        .exec()
+        .then((user) => {
+          console.log(user);
+          user.favourites.push(food.id);
+          return user.save();
+        })
+        .then(() => {
+          res.redirect('/profile');
+        });
+    })
+    .catch(next);
+
+}
+
 module.exports = {
   index: indexRoute,
   new: newRoute,
@@ -136,5 +158,6 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   createComment: createCommentRoute,
-  deleteComment: deleteCommentRoute
+  deleteComment: deleteCommentRoute,
+  favourite: addFavouriteRoute
 };

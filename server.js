@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
-if(env === 'development') app.use(morgan('dev'));
+// if(env === 'development') app.use(morgan('dev'));
 
 app.use(session({
   secret: secret,

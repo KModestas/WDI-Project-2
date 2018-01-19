@@ -4,7 +4,9 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, trim: true, unique: true },
   username: { type: String, required: true, trim: true, unique: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  favourites: [{type: mongoose.Schema.ObjectId, ref: 'Food'}]
+
 });
 
 // hashes the password and prevents it from being rehashed when username or email is updated
@@ -35,5 +37,8 @@ userSchema.methods.validatePassword = function validatePassword(password) {
 };
 
 
+userSchema.methods.addFavourite = function addFavourite(food) {
+  this.favourites.push(food);
+};
 
 module.exports = mongoose.model('User', userSchema);

@@ -10,11 +10,11 @@
 
 
   <p>
-    Amounts per 100g:<br>
-    Protein: <%= food.protein %>g<br>
-    Carbs: <%= food.carbs %>g<br>
-    Fat: <%= food.fat %>g<br>
-    Calories: <%= food.calories %><br>
+    (Amounts per <strong>100g</strong>)<br>
+    Protein: <strong> <%= food.protein %>g<br> </strong>
+    Carbs: <strong> <%= food.carbs %>g<br> </strong>
+    Fat:  <strong> <%= food.fat %>g<br></strong>
+    Calories: <strong> <%= food.calories %><br> </strong>
     <br><%= food.description %><br>
     <hr>
   </p>
@@ -24,8 +24,14 @@
 
 
     <div class="food-item-form" class="form-control">
+    <%  if (locals.isLoggedIn) { %>
+          <form action="/foods/<%= food.id %>/favourite" method="POST">
+          <button class="favourite-food">Favourite Food</button>
+          </form>
+    <%  } %>
       <% if(locals.isLoggedIn && food.belongsTo(user)) { %>
         <a href="/foods/<%= food.id %>/edit">Edit Food</a>
+
           <button class="delete-food">Delete Food</button>
         <form method="POST" action="/foods/<%= food.id %>">
         <input type="hidden" name="_method" value="DELETE">
