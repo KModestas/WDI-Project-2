@@ -1,52 +1,58 @@
 <%- include ../partials/_navbar.ejs %>
 
-<div class="container food-item">
-  <div class="row">
-    <div class="col-12">
+
+<div class="food-item">
+  <div class="food-display">
+    <h2><%= food.name %></h2>
+    <h3>Created By: <%= food.createdBy.username %></h3>
+    <img class="food-img" src="<%= food.image %>" alt="<%= food.name %>">
+  </div>
 
 
-      <h2><%= food.name %></h2>
-      <h3>Created By: <%= food.createdBy.username %></h3>
-      <img src="<%= food.image %>" alt="<%= food.name %>">
+  <p>
+    Amounts per 100g:<br>
+    Protein: <%= food.protein %>g<br>
+    Carbs: <%= food.carbs %>g<br>
+    Fat: <%= food.fat %>g<br>
+    Calories: <%= food.calories %><br>
+    <br><%= food.description %><br>
+    <hr>
+  </p>
+<div>
+  </div>
 
-      <p>
-        Amounts per 100g:<br>
-        Protein: <%= food.protein %>g<br>
-        Carbs: <%= food.carbs %>g<br>
-        Fat: <%= food.fat %>g<br>
-        Calories: <%= food.calories %><br>
-        Description: <br><%= food.description %><br>
-      </p>
 
+
+    <div class="food-item-form" class="form-control">
       <% if(locals.isLoggedIn && food.belongsTo(user)) { %>
-        <a href="/foods/<%= food.id %>/edit">Edit</a>
+        <a href="/foods/<%= food.id %>/edit">Edit Food</a>
+          <button class="delete-food">Delete Food</button>
         <form method="POST" action="/foods/<%= food.id %>">
         <input type="hidden" name="_method" value="DELETE">
-        <button>Delete</button>
         </form>
         <% } %>
-
+        <h4 class="comment-heading">Comments:</h4>
         <% food.comments.forEach((comment) => { %>
+          <hr>
           <p><%= comment.content %></p>
-          <small><%= comment.createdBy.username %></small>
+          <small>Posted by: <%= comment.createdBy.username %></small>
 
           <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
             <form method="POST" action="/foods/<%= food.id %>/comments/<%= comment.id %>">
             <input type="hidden" name="_method" value="DELETE">
-            <button>Delete</button>
+            <button class="delete-comment">Delete Comment</button>
             </form>
             <% } %>
             <% }) %>
 
             <% if(locals.isLoggedIn) { %>
               <section>
-              <h4>Leave a comment</h4>
               <form method="POST" action="/foods/<%= food.id %>/comments">
-              <textarea name="content" id="content" placeholder="Comment"></textarea>
-              <button class="button">Leave a comment</button>
+              <textarea name="content" id="content" class="form-control" placeholder="Comment"></textarea>
+              <button class="comment-button btn btn-primary">Leave a comment</button>
               </form>
               </section>
               <% } %>
             </div>
-          </div>
-        </div>
+
+            </div>

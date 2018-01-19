@@ -1,41 +1,41 @@
-<main class-"background-image">
+<main class="background-image">
 
 <%- include ../partials/_navbar.ejs %>
 
 
-<form method="POST" action="/foods/<%= food.id %>">
+<form method="POST" action="/foods/<%= food.id %>" class="col-md-6 offset-md-3">
   <input type="hidden" name="_method" value="PUT">
   <div>
     <label for="name">Name</label>
-    <input type="text" name="name" id="name" value="<%= food.name %>" maxlength="25" required>
+    <input type="text" name="name" id="name" value="<%= food.name %>" maxlength="25" class="form-control" required>
   </div>
 
     <div>
       <label for="image">Image</label>
-      <input type="text" name="image" id="image" value="<%= food.image %>" required>
+      <input type="text" name="image" id="image" value="<%= food.image %>" class="form-control" required>
     </div>
     <div>
       <label for="protein">Protein (per 100g)</label>
-      <input type="number" name="protein" id="protein" value="<%= food.protein %>">
+      <input type="number" name="protein" id="protein" value="<%= food.protein %>" class="form-control" required>
     </div>
     <div>
       <label for="carbs">Carbs (per 100g)</label>
-      <input type="number" name="carbs" id="carbs" value="<%= food.carbs %>" required>
+      <input type="number" name="carbs" id="carbs" value="<%= food.carbs %>" required class="form-control">
     </div>
     <div>
       <label for="fat">Fat (per 100g)</label>
-      <input type="number" name="fat" id="fat" value="<%= food.fat %>" required>
+      <input type="number" name="fat" id="fat" value="<%= food.fat %>" class="form-control" required>
     </div>
     <div>
       <label for="calories">Calories (per 100g)</label>
-      <input type="number" name="calories" id="calories" value="<%= food.calories %>" required>
+      <input type="number" name="calories" id="calories" value="<%= food.calories %>" class="form-control" required>
     <div>
       <div>
         <label for="description">Description</label>
-        <textarea name="description" id="description" value="<%= food.description %>" required>
+        <textarea name="description" id="description" value="<%= food.description %>" class="form-control" required>
        </textarea>
       </div>
 
-  <button class="button">Update Food</button>
+  <button class="button btn btn-primary edit-food">Update Food</button>
 </form>
 </main>

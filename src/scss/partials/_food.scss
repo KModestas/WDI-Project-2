@@ -1,0 +1,56 @@
+
+.food-item {
+  margin: 0 auto;
+  max-width: 500px;
+
+ text-align: center;
+
+  .food-img {
+    margin-bottom: 20px;
+    max-width: 400px;
+    max-height: 400px;
+  }
+  .food-display {
+    text-align: center;
+  }
+}
+
+
+
+  .food-item-form {
+    padding: 10px;
+    text-align: justify;
+
+    .delete-comment {
+      position: relative;
+      top: -30px;
+      font-size: 13px;
+    }
+
+    small {
+      font-style: italic;
+    }
+
+    .comment-button {
+      margin-top: 10px;
+    }
+  }
+
+  .food-item-border {
+      border: 0.5px solid rgba(0,0,0,0.2);
+      padding: 10px;
+      text-align: justify;
+    }
+
+.delete-food {
+  margin: 0;
+  position: relative;
+  top: 0;
+  right: 0;
+  float: right;
+  clear: both;
+}
+
+.comment-heading {
+  text-align: center;
+}
