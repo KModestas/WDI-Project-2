@@ -26,6 +26,18 @@ background: rgba(0,0,0,0.8);
 color: #ffffff;
 }
 
+span  {
+  .navbar-toggler-icon {
+        color: blue;
+  }
+}
+
+button {
+  .navbar-toggler.navbar-toggler-right {
+    color: blue;
+  }
+}
+
 .food-image {
   height: 200px;
   max-width: 300px;
