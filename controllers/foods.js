@@ -47,8 +47,6 @@ function editRoute(req, res, next) {
     .populate('createdBy')
     .exec()
     .then((food) => {
-      console.log(food);
-      console.log(food.belongsTo(req.user));
       if(!food) return res.redirect();
       if(!food.belongsTo(req.user)) return res.unauthorized(`/foods/${food.id}`, 'You do not have permission to edit that resource');
       return res.render('foods/edit', { food });

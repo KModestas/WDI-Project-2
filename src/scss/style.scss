@@ -15,7 +15,8 @@
   height: 100vh;
   background: url('../../src/assets/brooke-lark-230140.jpg');
   background-size: cover;
-  background-position: center;
+  // experiment with didffernt bg position properties for mobile responsivness
+  background-position: top;
   background-repeat: no-repeat;
   text-align: center;
 }
